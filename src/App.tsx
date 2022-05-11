@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { DragDropContext } from "react-beautiful-dnd";
 import "./App.css";
 import { InputField } from "./components/InputField";
 import "./components/styles.css";
@@ -20,11 +21,17 @@ const App: React.FC = () => {
         }
     };
     return (
-        <div className="App">
-            <h1 className="heading">Taskify</h1>
-            <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-            <TodoList todos={todos} setTodos={setTodos} />
-        </div>
+        <DragDropContext>
+            <div className="App">
+                <h1 className="heading">Taskify</h1>
+                <InputField
+                    todo={todo}
+                    setTodo={setTodo}
+                    handleAdd={handleAdd}
+                />
+                <TodoList todos={todos} setTodos={setTodos} />
+            </div>
+        </DragDropContext>
     );
 };
 

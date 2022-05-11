@@ -5,6 +5,8 @@ import SingleTodo from "./SingleTodo";
 interface Props {
     todos: Todo[];
     setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+    completedTodos: Todo[];
+    setCompletedTodo: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
 export const TodoList: React.FC<Props> = ({ todos, setTodos }: Props) => {
